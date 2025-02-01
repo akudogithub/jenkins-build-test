@@ -3,7 +3,7 @@ pipeline{
 		stages{
 			stage('git-clone'){
 				steps{
-					sh ''
+					'checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'akudogithub', url: 'https://github.com/akudogithub/jenkins-build-test.git']])'
 				}
 			}
 			stage('system-resources check'){
